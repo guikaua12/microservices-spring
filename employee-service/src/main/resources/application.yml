@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: employee-service
   datasource:
     url: jdbc:mysql://localhost/employee-service
     username: root
@@ -6,3 +8,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+
+server:
+  port: 8080
