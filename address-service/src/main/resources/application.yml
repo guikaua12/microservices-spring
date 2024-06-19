@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: address-service
+  datasource:
+    url: jdbc:mysql://localhost/address-service
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8081
