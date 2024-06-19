@@ -16,5 +16,6 @@ public class Employee {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private final Long id;
+    private String name;
     private BigDecimal salary;
 }
