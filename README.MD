@@ -14,3 +14,4 @@
 - Spring Boot
 - Spring Data (JPA)
 - MySQL
+- Spring Cloud Open Feign
