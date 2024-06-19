@@ -17,4 +17,5 @@ public class Address {
     private String address1;
     private String address2;
     private int zipcode;
+    private final Long userId;
 }

@@ -26,4 +26,9 @@ public class AddressController {
     public ResponseEntity<Page<Address>> findAll(Pageable pageable) {
         return ResponseEntity.ok(addressService.findAll(pageable));
     }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<Address> findByUserId(@PathVariable("userId") Long id) {
+        return ResponseEntity.ok(addressService.findByUserId(id));
+    }
 }

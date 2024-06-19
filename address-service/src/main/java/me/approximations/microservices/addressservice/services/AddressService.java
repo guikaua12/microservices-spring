@@ -8,4 +8,6 @@ public interface AddressService {
     Page<Address> findAll(Pageable pageable);
 
     Address findById(Long id);
+
+    Address findByUserId(Long id);
 }
