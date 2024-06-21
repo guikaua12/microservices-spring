@@ -10,7 +10,6 @@ import me.approximations.microservices.employeeservice.services.EmployeeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +22,7 @@ public class EmployeeController implements EmployeeResource {
     private final AddressServiceClient addressServiceClient;
     private final ModelMapper modelMapper;
 
-    @GetMapping("/{id}")
+    @Override
     public EmployeeDTO findById(@PathVariable("id") Long id) {
         final Employee employee = employeeService.findById(id);
         final AddressDTO address = addressServiceClient.findByUserId(employee.getId());
@@ -34,7 +33,7 @@ public class EmployeeController implements EmployeeResource {
         return employeeDTO;
     }
 
-    @GetMapping
+    @Override
     public Page<EmployeeDTO> findAll(Pageable pageable) {
         final Page<Employee> employees = employeeService.findAll(pageable);
         return employees.map(employee -> modelMapper.map(employee, EmployeeDTO.class));
